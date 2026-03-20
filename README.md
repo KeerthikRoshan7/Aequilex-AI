@@ -1,6 +1,6 @@
 <div align="center">
-<h1>⚖️ AEQUILEX</h1>
-<p><b>Next-Generation Legal Intelligence Platform</b></p>
+<h1>⚖️ AEQUILEX AI</h1>
+<p><b>Your AI-Powered Legal Research Intelligence Assistant</b></p>
 
 </div>
 
