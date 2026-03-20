@@ -6,7 +6,7 @@ import { Settings, Mic, Send, FolderPlus, RefreshCw, LogOut, Scale, FileText, Gl
 // =========================================================================
 // ☁️ CLOUD PRODUCTION SETUP ☁️
 // =========================================================================
-import { createClient } from '@supabase/supabase-js'; // UNCOMMENT THIS FOR GITHUB/VERCEL
+import { createClient } from '@supabase/supabase-js'; // <-- UNCOMMENT THIS LINE IN GITHUB!
 
 // Helper to safely copy text in iFrame and secure environments
 const copyToClipboard = (text: string, callback?: (status: boolean) => void) => {
@@ -34,7 +34,7 @@ const SUPABASE_ANON_KEY = typeof process !== 'undefined' && process.env.NEXT_PUB
 const GEMINI_API_KEY = typeof process !== 'undefined' && process.env.NEXT_PUBLIC_GEMINI_API_KEY ? process.env.NEXT_PUBLIC_GEMINI_API_KEY : "";
 
 // LIVE MODE: Connected to your real Supabase Database
-const IS_MOCK = false; // SET THIS TO false FOR GITHUB/VERCEL
+const IS_MOCK = false; // <-- CHANGE THIS TO false IN GITHUB!
 
 // =========================================================================
 // DATABASE CLIENT INITIALIZATION
@@ -1076,7 +1076,7 @@ function LoginScreen({ onLogin }: { onLogin: any }) {
     return true;
   };
 
-  const handleLoginSubmit = async (e: any) => {
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if(!email || !password) return;
     setLoading(true);
@@ -1098,7 +1098,7 @@ function LoginScreen({ onLogin }: { onLogin: any }) {
     }
   };
 
-  const handleRegisterSubmit = async (e: any) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if(!rName || !rEmail || !rPassword) return;
     setLoading(true);
