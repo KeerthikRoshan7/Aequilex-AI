@@ -36,37 +36,42 @@ To run Aequilex locally on your machine, follow these steps:
 
 1. Clone the repository
 
+```javascript
 git clone [https://github.com/yourusername/aequilex.git](https://github.com/yourusername/aequilex.git)
 cd aequilex
-
+```
 
 2. Install dependencies
 
+```javascript
 npm install @supabase/supabase-js lucide-react react-markdown
-
+```
 
 3. Environment Variables
 
 Create a .env.local file in the root directory and add your secure keys. (Note: This file is ignored by Git for security).
 
+```javascript
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
-
+```
 
 4. Toggle Development Mode
 
 In src/app/page.jsx, ensure the database toggle is set to your live Supabase instance:
 
+```javascript
 const IS_MOCK = false; 
-
+```
 
 5. Start the development server
 
+```javascript
 npm run dev
+```
 
-
-Open http://localhost:3000 in your browser to view the application.
+Open ```javascript http://localhost:3000 ``` in your browser to view the application.
 
 🔒 Security & Privacy
 
