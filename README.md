@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+<h1>⚖️ AEQUILEX</h1>
+<p><b>Next-Generation Legal Intelligence Platform</b></p>
 
-## Getting Started
+</div>
 
-First, run the development server:
+Aequilex is an edge-to-edge, serverless web application that utilizes Retrieval-Augmented Generation (RAG), strict prompt-grounding, and Google's Gemini 2.5 architecture to automate legal research, document drafting, and multilingual translation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Designed with a custom Cybersigilism x Liquid Gold aesthetic, Aequilex bridges the gap between traditional courtroom mechanics and ultra-modern legal tech.
+
+✨ Core Modules
+
+⚖️ Research Core: A highly specialized legal query engine. Features a proprietary "Strict Citation Mode" to eliminate AI hallucinations and ensure verifiable references to Indian case laws and the new BNS/BNSS codes.
+
+✍️ Drafting Studio: An automated document generator. Processes raw client facts, audio dictations, and uploaded reference PDFs to instantly compile structured, court-ready templates (e.g., Bail Applications, Legal Notices, NDAs).
+
+🌍 Translation Desk: High-fidelity legal text translation designed for regional Indian lower courts (Hindi, Tamil, Marathi), explicitly preserving complex terminology and Latin maxims.
+
+📚 Knowledge Vault: A secure, B2B data-management solution. Features auto-archiving and 1-click clipboard extraction tied directly to specific Case Folders.
+
+🛠️ Technology Stack
+
+Aequilex is built for scale, low latency, and enterprise-grade security.
+
+Frontend: Next.js (React App Router), Tailwind CSS, Lucide Icons
+
+AI Engine: Google Gemini 2.5 Flash API (Multimodal: Text, Vision OCR, Audio WAV processing)
+
+Database & Auth: Supabase (PostgreSQL) - Row Level Security (RLS) enabled
+
+Markdown Parsing: Custom zero-dependency Regex AST parser ensuring zero-bloat browser rendering
+
+🚀 Local Development Setup
+
+To run Aequilex locally on your machine, follow these steps:
+
+1. Clone the repository
+
+```javascript
+git clone [https://github.com/yourusername/aequilex.git](https://github.com/yourusername/aequilex.git)
+cd aequilex
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```javascript
+npm install @supabase/supabase-js lucide-react react-markdown
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Environment Variables
 
-## Learn More
+Create a .env.local file in the root directory and add your secure keys. (Note: This file is ignored by Git for security).
 
-To learn more about Next.js, take a look at the following resources:
+```javascript
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Toggle Development Mode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+In src/app/page.jsx, ensure the database toggle is set to your live Supabase instance:
 
-## Deploy on Vercel
+```javascript
+const IS_MOCK = false; 
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Start the development server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```javascript
+npm run dev
+```
+
+Open ```javascript http://localhost:3000 ``` in your browser to view the application.
+
+🔒 Security & Privacy
+
+Aequilex implements secure JWT authentication via Supabase. User-uploaded files (PDFs, Images, Voice Memos) are processed transiently through encrypted API endpoints and are not utilized for public LLM training.
+
+© 2026 Aequilex Intelligence. All Rights Reserved.
